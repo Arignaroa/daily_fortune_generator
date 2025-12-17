@@ -4,15 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>생각토론 3파트 오늘의 운세</title>
-    <!-- Social preview (optional) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="생각토론 3파트 오늘의 운세">
-    <meta property="og:description" content="이름과 생년월일로 오늘의 운세를 확인해요. 같은 별자리는 공통 운세를 공유합니다.">
-    <meta property="og:image" content="https://placehold.co/1200x630/png?text=%EC%98%A4%EB%8A%98%EC%9D%98+%EC%9A%B4%EC%84%B8">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%9F%3C/text%3E%3C/svg%3E">
-    
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes fadeIn {
@@ -22,7 +13,39 @@
     .animate-fadeIn {
       animation: fadeIn 0.8s ease-out;
     }
-  </style>
+  
+
+        /* 모바일 가독성 최적화 */
+        :root{
+            --fs-base: clamp(14px, 3.9vw, 16px);
+            --fs-h1: clamp(22px, 6.2vw, 34px);
+            --fs-h2: clamp(18px, 5.0vw, 26px);
+            --fs-card-title: clamp(14px, 3.8vw, 16px);
+            --fs-card-body: clamp(14px, 3.9vw, 16px);
+        }
+        html{
+            font-size: var(--fs-base);
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+        body{
+            line-height: 1.55;
+            padding: calc(12px + env(safe-area-inset-top))
+                     calc(12px + env(safe-area-inset-right))
+                     calc(16px + env(safe-area-inset-bottom))
+                     calc(12px + env(safe-area-inset-left));
+        }
+        .app-wrap{
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .h1-title{ font-size: var(--fs-h1); line-height: 1.15; }
+        .h2-title{ font-size: var(--fs-h2); line-height: 1.25; }
+        .card-title{ font-size: var(--fs-card-title); }
+        .card-body{ font-size: var(--fs-card-body); }
+    
+</style>
 </head>
 
 <body class="bg-gray-50 font-sans antialiased text-[15px] leading-relaxed p-3 sm:p-4">
@@ -35,6 +58,109 @@
     // ✅ 기존: SUMMARY 65개 + 행운의 행동 100개
     // =========================
     const summaryActions = [
+"오늘은 작은 선택이 큰 흐름을 만듭니다. 급하지 않게 한 번 더 확인하세요.",
+            "말을 줄이면 집중이 늘고, 집중이 늘면 결과가 따라옵니다.",
+            "해야 할 일 하나를 끝내면 마음의 짐이 눈에 띄게 가벼워집니다.",
+            "오늘은 ‘정리’가 운을 부릅니다. 책상부터 가볍게 해보세요.",
+            "조용히 준비한 사람이 마지막에 웃는 날입니다.",
+            "생각이 복잡할수록 단순한 체크리스트가 해답입니다.",
+            "지금 하는 한 걸음이 내일의 여유를 만들어 줍니다.",
+            "배려 한마디가 예상보다 큰 도움으로 돌아옵니다.",
+            "오늘은 ‘기록’이 힘입니다. 떠오른 아이디어를 남겨두세요.",
+            "결정이 필요하면 기준을 하나만 세우면 빨라집니다.",
+            "작은 성취를 크게 칭찬하면 에너지가 다시 차오릅니다.",
+            "흐트러진 루틴을 한 가지라도 바로잡으면 운이 정돈됩니다.",
+            "오늘은 지나친 완벽보다 ‘완료’가 더 중요합니다.",
+            "미뤄둔 연락 한 통이 관계를 부드럽게 풀어줍니다.",
+            "당신의 꾸준함이 누군가에게는 큰 신뢰가 됩니다.",
+            "짧은 휴식이 긴 집중을 가능하게 합니다. 숨을 고르세요.",
+            "원하는 방향이 있다면 지금 ‘첫 문장’부터 쓰면 됩니다.",
+            "오늘은 약속을 지키는 것이 가장 큰 행운의 열쇠입니다.",
+            "낯선 방법 하나를 시도하면 막힌 길이 열립니다.",
+            "스스로를 재촉하기보다 속도를 조절하면 더 멀리 갑니다.",
+            "좋은 소식은 준비된 곳으로 옵니다. 정리부터 해두세요.",
+            "말보다 행동이 설득력을 갖는 날입니다. 조용히 보여주세요.",
+            "오늘은 ‘선택과 집중’이 성과를 두 배로 만듭니다.",
+            "기분이 흔들리면 몸을 먼저 움직이면 안정됩니다.",
+            "부드러운 태도가 단단한 결과를 가져옵니다.",
+            "실수는 수정하면 경험이 됩니다. 너무 크게 붙잡지 마세요.",
+            "한 번에 다 하려 하지 말고, 1순위부터 처리하세요.",
+            "무리한 약속보다 가능한 약속이 관계를 오래 갑니다.",
+            "오늘은 작은 절약이 큰 안심으로 이어집니다.",
+            "어제보다 1%만 나아져도 충분히 잘하고 있습니다.",
+            "혼자 해결하려 하지 말고 도움을 요청하면 길이 빨라집니다.",
+            "좋은 기회는 ‘준비된 질문’에서 시작됩니다.",
+            "감정이 올라오면 사실을 적어보세요. 정리가 됩니다.",
+            "오늘은 자신감보다 ‘차분함’이 더 큰 무기입니다.",
+            "작게 시작하면 크게 이어집니다. 시작이 반입니다.",
+            "당신의 성실함을 알아보는 사람이 곧 나타납니다.",
+            "조급함을 내려놓으면 더 정확하게 보입니다.",
+            "오늘은 소소한 친절이 운을 끌어당깁니다.",
+            "하나를 배우면 하나가 연결되는 날입니다. 호기심을 따라가세요.",
+            "가벼운 산책이나 스트레칭이 생각을 맑게 해줍니다.",
+            "정답을 찾기보다 방향을 잡으면 해결이 빨라집니다.",
+            "불필요한 비교를 멈추면 당신의 속도가 살아납니다.",
+            "오늘은 ‘말의 톤’이 관계를 좌우합니다. 부드럽게 말해요.",
+            "작은 불편을 미리 해결하면 큰 문제를 막습니다.",
+            "당장의 이익보다 신뢰를 선택하면 더 크게 돌아옵니다.",
+            "일의 순서를 바꾸면 난이도가 확 내려갑니다.",
+            "오늘은 ‘좋은 질문’이 좋은 답을 부릅니다.",
+            "지금 필요한 건 더 많은 정보가 아니라 더 명확한 결정입니다.",
+            "스스로에게 친절할수록 실행력이 올라갑니다.",
+            "잠깐 멈추고 계획을 점검하면 실수가 줄어듭니다.",
+            "오늘은 주변의 칭찬을 겸손히 받아들이세요. 기운이 오릅니다.",
+            "새로운 시작은 거창할 필요 없습니다. 한 줄이면 됩니다.",
+            "마무리만 잘해도 평판이 좋아집니다. 끝을 챙기세요.",
+            "오늘은 ‘정돈된 말’이 ‘정돈된 결과’를 만듭니다.",
+            "당신이 기대한 것보다 더 나은 흐름이 오고 있습니다.",
+            "작은 약속을 지키는 사람이 결국 큰 일을 맡습니다.",
+            "지친다면 속도를 낮추고 정확도를 올리세요.",
+            "오늘은 ‘검증’이 행운입니다. 확인하고 진행하세요.",
+            "한 번 더 감사하면 하루가 부드러워집니다.",
+            "눈앞의 일부터 끝내면 마음의 공간이 생깁니다.",
+            "대화는 이기기보다 이해하기 위해 하는 날입니다.",
+            "당신의 기준을 세우면 흔들림이 줄어듭니다.",
+            "오늘은 ‘정리된 파일/메모’가 미래의 시간을 아껴줍니다.",
+            "좋은 습관 하나가 오늘의 분위기를 바꿉니다.",
+            "결과가 늦어도 과정이 쌓이고 있습니다. 계속 가세요.",
+            "지금 할 수 있는 것에 집중하면 불안이 줄어듭니다.",
+            "작은 성공을 반복하면 큰 자신감이 됩니다.",
+            "오늘은 새로움보다 ‘기본’이 강합니다. 기본을 지키세요.",
+            "가벼운 웃음이 긴장을 풀고 기회를 열어줍니다.",
+            "오늘은 ‘정중한 표현’이 좋은 답을 가져옵니다.",
+            "서두르지 말고 흐름을 읽으면 실수가 사라집니다.",
+            "당신의 관찰력이 빛나는 날입니다. 디테일을 살리세요.",
+            "한 가지를 끝내고 다음으로 넘어가면 속도가 붙습니다.",
+            "오늘은 작은 정리가 큰 여유가 되는 날입니다.",
+            "무거운 일일수록 쪼개서 진행하면 쉽게 풀립니다.",
+            "당신의 꾸준함이 오늘 누군가에게 힘이 됩니다.",
+            "한 번 더 듣고, 한 번 덜 말하면 관계가 좋아집니다.",
+            "오늘은 ‘준비된 사람’에게 좋은 소식이 옵니다.",
+            "미루던 것을 시작하면 의외로 금방 끝납니다.",
+            "작은 개선이 큰 효율을 부릅니다. 한 군데만 고치세요.",
+            "일찍 끝낼수록 더 좋은 선택을 할 시간이 생깁니다.",
+            "오늘은 ‘정확한 표현’이 오해를 줄여줍니다.",
+            "당신의 선택이 옳아지는 방향으로 환경을 바꾸세요.",
+            "새로운 제안은 타이밍입니다. 오늘은 말해볼 만합니다.",
+            "결정이 어렵다면 ‘최악을 피하는 선택’부터 하세요.",
+            "당신의 강점을 쓰는 일이 가장 빠른 길입니다.",
+            "오늘은 작은 선행이 큰 인연으로 이어집니다.",
+            "집중할 시간을 확보하면 성과가 자연스럽게 따라옵니다.",
+            "당신이 해온 노력은 사라지지 않습니다. 오늘 드러납니다.",
+            "불필요한 걱정을 줄이면 필요한 에너지가 모입니다.",
+            "오늘은 ‘정리’와 ‘마무리’가 특히 강한 운입니다.",
+            "가벼운 준비가 큰 실수를 막아줍니다. 체크하세요.",
+            "말을 바꾸면 분위기가 바뀝니다. 긍정으로 표현해요.",
+            "오늘은 계획보다 실행이 더 중요합니다. 시작하세요.",
+            "지금의 작은 용기가 다음 기회를 끌어옵니다.",
+            "혼자만의 시간이 당신을 더 또렷하게 만듭니다.",
+            "오늘은 ‘자신을 믿는 태도’가 주변을 안심시킵니다.",
+            "한 번 더 점검하면 완성도가 달라집니다.",
+            "당신의 페이스를 지키면 운도 그 속도에 맞춰옵니다.",
+            "오늘은 ‘지금 할 수 있는 한 가지’가 최고의 선택입니다."
+    ];
+
+    const originalActions = [
       "미소로 시작하면 오늘의 운이 열립니다. 바른 언어표현을 잊지 마세요.",
       "바른 자세로 호흡을 가다듬고 시간확인으로 리듬을 잡아보세요.",
       "높은 텐션은 포인트로만, 적당한 속도는 하루 전체의 안정입니다.",
@@ -100,9 +226,6 @@
       "핸드폰을 멀리하면 내 마음이 가까워집니다.",
       "칭찬은 작게, 자주, 구체적으로. 관계가 단단해집니다.",
       "녹화로 배우고 문서로 남기면 팀이 성장합니다.",
-    ];
-
-    const originalActions = [
       "수업 시작과 끝에 환한 미소를 유지하세요. 학생과의 친밀감이 행운을 부릅니다.",
       "수업 시간 내내 허리를 곧게 펴고 앉으세요. 전문성과 집중력이 학생에게 전달됩니다.",
       "평소보다 활기찬 텐션으로 수업을 진행하세요. 학생의 참여도를 높여 성과를 얻습니다.",
@@ -805,6 +928,51 @@
       return "별자리 알 수 없음";
     }
 
+        // ✅ 생년월일 입력 정규화 (YYYY-MM-DD 또는 YYYYMMDD 지원)
+        function normalizeBirthdate(raw) {
+            if (!raw) return null;
+            const s = raw.replace(/\s+/g, '');
+            // YYYYMMDD
+            if (/^\d{8}$/.test(s)) {
+                const y = s.slice(0,4), m = s.slice(4,6), d = s.slice(6,8);
+                return `${y}-${m}-${d}`;
+            }
+            // YYYY-MM-DD
+            if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+            // YYYY/MM/DD
+            if (/^\d{4}\/\d{2}\/\d{2}$/.test(s)) return s.replaceAll('/', '-');
+            return null;
+        }
+
+        function isValidDateString(yyyy_mm_dd) {
+            const [y, m, d] = yyyy_mm_dd.split('-').map(Number);
+            if (!y || !m || !d) return false;
+            if (m < 1 || m > 12) return false;
+            const dt = new Date(y, m - 1, d);
+            return dt.getFullYear() === y && (dt.getMonth() + 1) === m && dt.getDate() === d;
+        }
+
+        // ✅ 달력 버튼을 눌렀을 때 숨겨진 date picker 열기
+        function openBirthPicker() {
+            const picker = document.getElementById('birthdatePicker');
+            if (!picker) return;
+            // 일부 모바일 브라우저는 showPicker 지원
+            if (picker.showPicker) picker.showPicker();
+            else picker.click();
+        }
+
+        // ✅ 달력에서 선택하면 텍스트 입력에 반영
+        document.addEventListener('DOMContentLoaded', () => {
+            const picker = document.getElementById('birthdatePicker');
+            const text = document.getElementById('birthdateText');
+            if (picker && text) {
+                picker.addEventListener('change', () => {
+                    if (picker.value) text.value = picker.value;
+                });
+            }
+        });
+
+
     // --- 시드 기반 인덱스(기존 그대로) ---
     function getSeededIndex(seedString, arrayLength) {
       let hash = 0;
@@ -863,13 +1031,18 @@
     // --- 운세 생성 ---
     function generateFortune() {
       const nameInput = document.getElementById('userName').value.trim();
-      const birthdateInput = document.getElementById('birthdate').value;
+      const birthdateRaw = document.getElementById('birthdateText')?.value.trim();
+            const birthdateInput = normalizeBirthdate(birthdateRaw);
       const resultDiv = document.getElementById('fortuneResult');
 
-      if (!nameInput || !birthdateInput) {
-        alert("이름과 생년월일을 모두 입력해 주세요.");
-        return;
-      }
+      if (!nameInput || !birthdateRaw) {
+                alert("이름과 생년월일을 모두 입력해 주세요.");
+                return;
+            }
+            if (!birthdateInput || !isValidDateString(birthdateInput)) {
+                alert("생년월일 형식을 확인해 주세요. 예: 1995-08-14 또는 19950814");
+                return;
+            }
 
       const selectedStar = getStarSign(birthdateInput);
       if (selectedStar === "별자리 알 수 없음" || !fortunesData.별자리[selectedStar]) {
@@ -888,13 +1061,13 @@
       // 순위
       const dailyRanks = calculateDailyStarRanking(YYYYMMDD);
       const userRank = dailyRanks[selectedStar];
-      // ✅ 나만의 운세: (이름+생일+날짜)로 고정
-      const mainFortune = getSeededElement(fortunesData.별자리[selectedStar], dailySeed, selectedStar + "_Main");
-      // ✅ 같은 별자리 모두가 공유하는 오늘의 공통 운세 (이름과 무관하게 날짜+별자리로 고정)
+      // ✅ 나만의 운세: summaryActions + originalActions (행동 풀)에서 (이름+생일+날짜)로 고정
+      const mainFortune = getSeededElement(summaryActions, dailySeed, 'PersonalSummary');
+      // ✅ 같은 별자리 모두가 공유하는 오늘의 운세 (이름과 무관하게 날짜+별자리로 고정)
       const sharedFortune = getSeededElement(fortunesData.공통별자리, `${YYYYMMDD}-${selectedStar}`, "Shared");
 
       // 기존
-      const luckyAction = getSeededElement(fortunesData.행동, dailySeed, 'Action');
+      const luckyAction = getSeededElement(originalActions, dailySeed, 'ActionOriginal');
       const luckyItem = getSeededElement(fortunesData.아이템, dailySeed, 'Item');
       const luckyColor = getSeededElement(fortunesData.색상, dailySeed, 'Color');
 
@@ -927,8 +1100,8 @@
 
       resultDiv.innerHTML = `
         <div class="animate-fadeIn p-4 bg-white rounded-2xl shadow-xl border-t-8 border-indigo-500">
-          <h2 class="text-xl font-extrabold text-gray-800 mb-2">⭐ ${nameInput}님의 행운 카드 (${currentFortuneData.date})</h2>
-          <div class="text-[15px] font-semibold text-gray-600 mb-4 space-y-1">
+          <h2 class="text-xl font-extrabold text-gray-800 mb-2 h2-title text-center">⭐ ${nameInput}님의 행운 카드 (${currentFortuneData.date})</h2>
+          <div class="text-[15px] font-semibold text-gray-600 mb-4 space-y-1 text-center">
             <p>🔮 당신의 별자리는 <span class="text-indigo-600">${selectedStar}</span>입니다.</p>
             <p class="${rankColor}">(${rankEmoji} 오늘의 운세 순위: ${userRank}위)</p>
           </div>
@@ -964,40 +1137,59 @@ ${createFortuneCard('행운의 아이템', luckyItem, 'bg-yellow-100 text-yellow
 
       const { name, date, star, rank, main, shared, action, item, color } = currentFortuneData;
 
-      const shareText = `
-🌟 ${name}님의 ${date} 운세 카드 🌟
+      // ✅ 배포된 페이지(https/http)에서만 주소를 붙입니다. (content://, file:// 방지)
+      const href = String(window.location.href || "");
+      const safeUrl = /^https?:\/\//i.test(href) ? href : "";
+
+      let shareText = `🌟 ${name}님의 ${date} 운세 카드 🌟
 ----------------------------------
-⭐ 별자리: ${star} (${rank}위!)
+⭐ 별자리: ${star}
+🏆 오늘의 운세 순위: ${rank}위
+----------------------------------
+🔮 오늘의 ${star} 운세: ${shared || '오늘의 별자리 운세를 불러오지 못했어요.'}
 ✨ 나만의 운세: ${main}
-👥 오늘의 공통 운세: ${shared}
 ----------------------------------
 👍 행운의 행동: ${action}
 🛍️ 행운의 아이템: ${item}
 🌈 행운의 색상: ${color}
 ----------------------------------
-(출처: 생각토론 3파트 오늘의 운세)
-`;
+(출처: 생각토론 3파트 오늘의 운세)`;
 
+      // ✅ 사이트 주소는 맨 마지막에만 추가
+      if (safeUrl) {
+        shareText += "\n🔗 " + safeUrl;
+      }
+
+      // Web Share API (모바일 공유 시트)
       if (navigator.share) {
         try {
           await navigator.share({
             title: `${name}님의 오늘의 운세 (${star} ${rank}위)`,
             text: shareText,
           });
+          return; // 공유 성공 시 종료
         } catch (error) {
-          console.error('공유 실패:', error);
+          // 사용자가 취소했거나 앱이 막았을 수 있음 → 클립보드로 폴백
+          console.warn('공유 실패(클립보드로 폴백):', error);
         }
-      } else {
-        alert("이 브라우저는 공유 기능을 지원하지 않습니다. 내용을 클립보드에 복사합니다:\n\n" + shareText);
-        navigator.clipboard.writeText(shareText).catch(err => console.error('클립보드 복사 실패:', err));
+      }
+
+      // 클립보드 폴백
+      try {
+        await navigator.clipboard.writeText(shareText);
+        alert("클립보드에 복사했어요! 카톡/메신저에 붙여넣기 해보세요 🙂");
+      } catch (err) {
+        console.error('클립보드 복사 실패:', err);
+        alert("복사가 막혀 있어요. 아래 내용을 길게 눌러 복사해 주세요:\n\n" + shareText);
       }
     }
-  </script>
 
-  <div class="max-w-md mx-auto">
+</script>
+
+  <div class="app-wrap">
     <header class="text-center py-5">
-      <h1 class="text-2xl sm:text-3xl font-black text-indigo-700">생각토론 3파트 오늘의 운세</h1>
-      <p class="text-gray-500 mt-2 text-[14px]">항상 응원해!</p>
+      <h1 class="text-2xl sm:text-3xl font-black text-indigo-700 h1-title">생각토론 3파트 오늘의 운세</h1>
+      <p class="text-gray-500 mt-2">항상 응원해!</p>
     </header>
 
     <div class="bg-white p-4 rounded-xl shadow-md mb-6 space-y-4">
@@ -1007,7 +1199,16 @@ ${createFortuneCard('행운의 아이템', luckyItem, 'bg-yellow-100 text-yellow
       </div>
       <div>
         <label for="birthdate" class="block text-[15px] font-semibold text-gray-700 mb-2">생년월일:</label>
-        <input type="date" id="birthdate" class="w-full p-3 text-[15px] border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-150" />
+        <div class="flex gap-2">
+                    <input type="text" id="birthdateText" placeholder="생년월일 (예: 1995-08-14 또는 19950814)"
+                        inputmode="numeric" autocomplete="bday"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition duration-150">
+                    <input type="date" id="birthdatePicker" class="hidden">
+                    <button type="button" onclick="openBirthPicker()"
+                        class="shrink-0 px-4 py-3 rounded-lg border border-gray-300 bg-white active:scale-[0.99]">
+                        📅
+                    </button>
+                </div>
       </div>
 
       <button onclick="generateFortune()" class="mt-4 w-full py-3.5 bg-indigo-600 text-white font-bold rounded-xl active:scale-[0.99] hover:bg-indigo-700 transition duration-200">
